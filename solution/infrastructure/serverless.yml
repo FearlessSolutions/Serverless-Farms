@@ -46,7 +46,7 @@ provider:
 resources:
   Resources:
 
-    ## RESOURCES INSERTION POINT - DO NOT REMOVE
+    ## RESOURCE INSERTION POINT - DO NOT REMOVE
 
 #  Outputs:
 #     NewOutput:
