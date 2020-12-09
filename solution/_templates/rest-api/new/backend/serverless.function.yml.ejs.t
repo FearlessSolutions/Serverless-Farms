@@ -2,7 +2,7 @@
 inject: true
 before: FUNCTION Insertion Point
 prepend: true
-to: serverless.yml
+to: backend/serverless.yml
 ---
   create-<%= h.changeCase.lower(name) %>:
     handler: models/<%= h.changeCase.lower(name) %>.create

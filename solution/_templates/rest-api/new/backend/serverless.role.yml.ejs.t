@@ -2,7 +2,7 @@
 inject: true
 before: ROLE Insertion Point
 prepend: true
-to: serverless.yml
+to: backend/serverless.yml
 ---
     - Effect: Allow
       Action:
