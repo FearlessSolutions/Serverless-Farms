@@ -103,7 +103,6 @@ def update(event, context):
 
 
 def delete(event, context):
-    table = dynamodb.Table(os.environ['DYNAMODB_TABLE'])
 
     # delete the todo from the database
     table.delete_item(
