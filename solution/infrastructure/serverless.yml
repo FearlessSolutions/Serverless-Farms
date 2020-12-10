@@ -33,7 +33,6 @@ provider:
 # you can define service wide environment variables here
   environment:
 
-    DYNAMODB_TABLE_WIDGET2: ${self:custom.settings.dbTablePrefix}-WIDGET2
     ## ENVIRONMENT Insertion Point - DO NOT REMOVE
 
 # you can add packaging information here
@@ -49,22 +48,6 @@ provider:
 resources:
   Resources:
 
-    widget2DynamoDbTable:
-      Type: 'AWS::DynamoDB::Table'
-      DeletionPolicy: Retain
-      Properties:
-        AttributeDefinitions:
-          -
-            AttributeName: id
-            AttributeType: S
-        KeySchema:
-          -
-            AttributeName: id
-            KeyType: HASH
-        ProvisionedThroughput:
-          ReadCapacityUnits: 1
-          WriteCapacityUnits: 1
-        TableName: ${self:provider.environment.DYNAMODB_TABLE_WIDGET2}
     ## RESOURCE Insertion Point - DO NOT REMOVE
 
 #  Outputs:

@@ -13,7 +13,7 @@ Long term many languages should be supported, even interchangeably on the same p
 1. AWS account - All infrastructure is designed for use at AWS, you need to have a login.
 1. newman (optional) - 
 
-### Quickstart
+### Quickstart ** Already outdated **
 1. clone repo
 1. ```cd solution```
 1. ```hygen rest-api new <MODEL_NAME>``` - This will create the code necessary for a rest API for your

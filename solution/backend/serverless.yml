@@ -11,7 +11,7 @@
 #
 # Happy Coding!
 
-service: ${self:custom.settings.awsRegionShortName}-${self:custom.settings.solutionName}-infrastructure
+service: ${self:custom.settings.awsRegionShortName}-${self:custom.settings.solutionName}-backend
 # app and org for use with dashboard.serverless.com
 #app: your-app-name
 #org: your-org-name
@@ -48,7 +48,6 @@ provider:
 # you can define service wide environment variables here
   environment:
 
-    DYNAMODB_TABLE_WIDGET2: ${self:custom.settings.dbTablePrefix}-WIDGET2
     ## ENVIRONMENT Insertion Point - DO NOT REMOVE
 
 # you can add packaging information here
@@ -62,45 +61,6 @@ provider:
 
 functions:
 
-  create-widget2:
-    handler: models/widget2.create
-    events:
-      - http:
-          path: widget2
-          method: post
-          cors: true
-
-  list-widget2:
-    handler: models/widget2.list
-    events:
-      - http:
-          path: widget2
-          method: get
-          cors: true
-
-  get-widget2:
-    handler: models/widget2.get
-    events:
-      - http:
-          path: widget2/{id}
-          method: get
-          cors: true
-
-  update-widget2:
-    handler: models/widget2.update
-    events:
-      - http:
-          path: widget2/{id}
-          method: put
-          cors: true
-
-  delete-widget2:
-    handler: models/widget2.delete
-    events:
-      - http:
-          path: widget2/{id}
-          method: delete
-          cors: true
 ## FUNCTION Insertion Point - DO NOT REMOVE
 
 #    Define function environment variables here
