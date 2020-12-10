@@ -11,10 +11,13 @@
 #
 # Happy Coding!
 
-service: fearless-farms-serverless
+service: ${self:custom.settings.awsRegionShortName}-${self:custom.settings.solutionName}-infrastructure
 # app and org for use with dashboard.serverless.com
 #app: your-app-name
 #org: your-org-name
+
+custom:
+  settings: ${file(./config/settings/.settings.js):merged}
 
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
@@ -23,14 +26,14 @@ frameworkVersion: '2'
 provider:
   name: aws
   runtime: python2.7
-
-# you can overwrite defaults here
-  stage: dev
-  region: us-east-1
+  region: ${self:custom.settings.awsRegion}
+  profile: ${self:custom.settings.awsProfile}
+  stackName: ${self:custom.settings.envName}-${self:service}
 
 # you can define service wide environment variables here
   environment:
 
+    DYNAMODB_TABLE_WIDGET2: ${self:custom.settings.dbTablePrefix}-WIDGET2
     ## ENVIRONMENT Insertion Point - DO NOT REMOVE
 
 # you can add packaging information here
@@ -46,6 +49,22 @@ provider:
 resources:
   Resources:
 
+    widget2DynamoDbTable:
+      Type: 'AWS::DynamoDB::Table'
+      DeletionPolicy: Retain
+      Properties:
+        AttributeDefinitions:
+          -
+            AttributeName: id
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: ${self:provider.environment.DYNAMODB_TABLE_WIDGET2}
     ## RESOURCE Insertion Point - DO NOT REMOVE
 
 #  Outputs:

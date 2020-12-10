@@ -1,0 +1,29 @@
+# a list of domain names to whitelist in the API
+# NOTE: Also used to determine valid redirect URIs for auth requests in the OAuth2Service
+#corsWhiteList: '["https://${cf:${self:custom.settings.infrastructureStackName}.CloudFrontEndpoint}", "https://${self:custom.settings.websiteUrl}"]'
+
+# a list of domain names to whitelist in the API while in dev (envType == dev)
+corsWhiteListLocal: '["http://localhost:3000"]'
+
+# Root path in parameter store for parameters used by this solution.
+paramStoreRoot: '${self:custom.settings.envName}/${self:custom.settings.solutionName}'
+
+# Name of the parameter in parameter store that stores MAIN circuit breaker flag
+# During certain cases when the system is overwhelmed, we may turn on main circuit breaker flag at the API level where the
+# applications will not be received any more and the system will start throwing errors saying something like
+# “System is under temporary maintenance. We are unable to accept any applications at this time. Please try again later”
+# The setting below points to parameter in the Parameter Store that has the MAIN circuit breaker flag
+paramStorePauseAcceptingRequests: '/${self:custom.settings.paramStoreRoot}/pauseAcceptingRequests'
+
+# The stack name of the 'cloudfront' serverless service
+infrastructureStackName: ${self:custom.settings.namespace}-infrastructure
+
+# The S3 bucket name used to host the static website
+#websiteBucketName: ${cf:${self:custom.settings.infrastructureStackName}.WebsiteBucket}
+
+# The id of the CloudFront distribution for the static website
+#websiteCloudFrontId: ${cf:${self:custom.settings.infrastructureStackName}.CloudFrontId}
+
+# URL of the website
+#websiteUrl: ${cf:${self:custom.settings.infrastructureStackName}.WebsiteUrl}
+

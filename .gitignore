@@ -134,3 +134,4 @@ admin.env
 _meta
 .serverless
 .idea
+node_modules
