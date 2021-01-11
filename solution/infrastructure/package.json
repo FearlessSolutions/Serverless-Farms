@@ -6,6 +6,8 @@
   "author": "Michael Knoll",
   "license": "MIT",
   "devDependencies": {
-    "serverless-settings-helper": "file:./serverless-settings-helper"
+    "@fearless/serverless-settings-helper": "workspace:^1.0.0",
+    "serverless-deployment-bucket": "^1.3.0",
+    "serverless-s3-remover": "^0.6.0"
   }
 }

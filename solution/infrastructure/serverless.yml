@@ -18,7 +18,7 @@ service: ${self:custom.settings.awsRegionShortName}-${self:custom.settings.solut
 
 custom:
   settings: ${file(./config/settings/.settings.js):merged}
-
+  ## CUSTOM Insertion Point - DO NOT REMOVE
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
 frameworkVersion: '2'
@@ -47,10 +47,14 @@ provider:
 # you can add CloudFormation resource templates here
 resources:
   Resources:
-
     ## RESOURCE Insertion Point - DO NOT REMOVE
 
-#  Outputs:
+  Outputs:
+    ## OUTPUT Insertion Point - DO NOT REMOVE
 #     NewOutput:
 #       Description: "Description for the output"
 #       Value: "Some output value"
+
+plugins:
+  - serverless-deployment-bucket
+  - serverless-s3-remover
