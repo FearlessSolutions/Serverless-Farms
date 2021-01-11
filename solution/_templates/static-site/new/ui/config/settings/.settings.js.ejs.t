@@ -1,4 +1,7 @@
-module.exports.merged = require("@aws-ee/serverless-settings-helper").mergeSettings(
+---
+to: ui/config/settings/.settings.js
+---
+module.exports.merged = require("@fearless/serverless-settings-helper").mergeSettings(
   __dirname,
   [
     "../../../../config/settings/.defaults.yml",

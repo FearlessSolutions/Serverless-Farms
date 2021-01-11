@@ -1,3 +1,6 @@
+---
+to: ui/config/settings/.defaults.yml
+---
 # The Gateway API endpoint
 apiUrl: ${cf:${self:custom.settings.backendStackName}.ServiceEndpoint}
 
@@ -15,4 +18,3 @@ websiteCloudFrontId: ${cf:${self:custom.settings.infrastructureStackName}.CloudF
 
 # URL of the website
 websiteUrl: ${cf:${self:custom.settings.infrastructureStackName}.WebsiteUrl}
-
