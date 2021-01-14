@@ -1,5 +1,6 @@
 ---
-to: ui/serverless.yml
+to: "<%= name ? `${name}` : 'ui' %>/serverless.yml"
+sh: "cd <%= name ? `${name}` : 'ui' %> && pnpm install @fearless/serverless-settings-helper serverless-deployment-bucket @fearless/serverless-ui-tools --save-dev"
 ---
 # For full config options, see docs.serverless.com
 # Note that most settings in here come from config/settings/*.yaml

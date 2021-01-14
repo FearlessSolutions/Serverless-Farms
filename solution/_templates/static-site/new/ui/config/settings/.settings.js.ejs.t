@@ -1,5 +1,5 @@
 ---
-to: ui/config/settings/.settings.js
+to: "<%= name ? `${name}` : 'ui' %>/config/settings/.settings.js"
 ---
 module.exports.merged = require("@fearless/serverless-settings-helper").mergeSettings(
   __dirname,

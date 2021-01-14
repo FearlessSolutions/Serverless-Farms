@@ -43,14 +43,6 @@ globalNamespace: ${self:custom.settings.awsAccountInfo.awsAccountId}-${self:cust
 # These artifacts include things like Lambda function code ZIP files, AWS CloudFormation Templates etc
 deploymentBucketName: ${self:custom.settings.globalNamespace}-artifacts
 
-# The S3 bucket name to be used for storing the loan request payload
-loansBucketName: ${self:custom.settings.globalNamespace}-loan-requests
-loansRequestPrefix: loansdata/requests
-loansResponsePrefix: loansdata/responses
-
-# The S3 bucket that hold configuration for circuit breaker configuration
-circuitBreakerConfigBucketName: ${self:custom.settings.globalNamespace}-circuit-breaker
-
 # The S3 bucket name to be used for S3 access logging
 loggingBucketName: ${self:custom.settings.envName}-${self:custom.settings.solutionName}-logging
 
@@ -59,27 +51,3 @@ dbTablePrefix: ${self:custom.settings.namespace}
 
 # Root path in parameter store for parameters used by this solution.
 paramStoreRoot: "${self:custom.settings.envName}/${self:custom.settings.solutionName}"
-
-etranUsername: "/${self:custom.settings.paramStoreRoot}/etran/username"
-etranPassword: "/${self:custom.settings.paramStoreRoot}/etran/password"
-etranSoftwareVendorName: "/${self:custom.settings.paramStoreRoot}/etran/softwareVendorName"
-etranHost: https://catweb2.sba.gov
-etranRestPath: /rest/elend/flexible/SharedEntryString
-# Information about the root data lake admin user.
-# The root admin user is created by default in the data lake internal authentication provider
-# The root user can be used for provisioning additional authentication providers
-# Root user's username
-rootUserName: root
-# Root user's first name
-rootUserFirstName: root
-# Root user's last name
-rootUserLastName: root
-
-# SQS defaults
-# VisibilityTimeout needs to be: (max processing time * 6). Ex: 5 min * 60 * 6 = 1800
-queueProcessingVisibilityTimeout: 1800  
-# Wait for up to X seconds for messages to arrive
-queueProcessingReceiveMessageWaitTimeSeconds: 5 
-queueProcessingMessageRetentionPeriod: 1209600 # 14 days
-queueProcessingMaxReceiveCount: 5
-dlqMessageRetentionPeriod: 1209600 # 14 days

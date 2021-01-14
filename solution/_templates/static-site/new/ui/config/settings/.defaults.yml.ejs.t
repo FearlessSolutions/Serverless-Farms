@@ -1,5 +1,5 @@
 ---
-to: ui/config/settings/.defaults.yml
+to: "<%= name ? `${name}` : 'ui' %>/config/settings/.defaults.yml"
 ---
 # The Gateway API endpoint
 apiUrl: ${cf:${self:custom.settings.backendStackName}.ServiceEndpoint}

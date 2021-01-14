@@ -1,4 +1,4 @@
-# @aws-ee/serverless-settings-helper
+# @afearless/serverless-settings-helper
 
 This package provides a helper to merge solution settings files with local and solution-level defaults.
 
