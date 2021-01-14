@@ -3,7 +3,7 @@ inject: true
 before: RESOURCE Insertion Point
 prepend: true
 to: infrastructure/serverless.yml
-sh: "cd <%= name === 'unnamed' ? 'ui' : `${name}` %> && pnpm install @fearless/serverless-settings-helper serverless-deployment-bucket serverless-s3-remover --save-dev"
+sh: "cd infrastructure && pnpm install @fearless/serverless-settings-helper serverless-deployment-bucket serverless-s3-remover --save-dev"
 ---
       # =============================================================================================
       # S3 Buckets
