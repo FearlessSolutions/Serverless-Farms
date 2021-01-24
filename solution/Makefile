@@ -1,7 +1,7 @@
 deploy:
-	cd infrastructure && serverless deploy
-	cd backend && serverless deploy
+	cd infrastructure && serverless deploy -s $(s)
+	cd backend && serverless deploy -s $(s)
 
 remove:
-	cd infrastructure && serverless remove
-	cd backend && serverless remove
+	cd infrastructure && serverless remove -s $(s)
+	cd backend && serverless remove -s $(s)

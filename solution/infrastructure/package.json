@@ -4,8 +4,5 @@
   "description": "Serverless Infrastructure provisioning for Fearless Farms",
   "repository": "<replace>",
   "author": "Michael Knoll",
-  "license": "MIT",
-  "devDependencies": {
-    "serverless-settings-helper": "file:./serverless-settings-helper"
-  }
+  "license": "MIT"
 }

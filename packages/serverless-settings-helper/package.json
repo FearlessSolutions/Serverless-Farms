@@ -1,11 +1,11 @@
 {
-  "name": "@aws-ee/serverless-settings-helper",
+  "name": "@fearless/serverless-settings-helper",
   "private": true,
   "version": "1.0.0",
   "description": "This package provides a helper to merge solution settings files with local and solution-level defaults",
-  "author": "aws-ee",
+  "author": "Fearless",
   "main": "lib/index.js",
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "MIT",
   "files": [
     "lib"
   ],
@@ -24,7 +24,7 @@
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-react-hooks": "^1.7.0",
     "husky": "^3.1.0",
-    "jest": "^24.9.0",
+    "jest": "^26.6.3",
     "jest-junit": "^10.0.0",
     "prettier": "^1.19.1",
     "pretty-quick": "^1.11.1",

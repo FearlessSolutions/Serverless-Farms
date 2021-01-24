@@ -19,3 +19,5 @@ envName: ${opt:stage}
 # This can be use for enabling some envType driven conditionals in code. (For example, create only single node
 # ElasticSearch cluster when envType is 'dev' but create multi-node cluster when it's 'prod')
 envType: dev
+
+websiteAcmArn: 728f197b-180a-4113-aaef-c482a4cd4d65

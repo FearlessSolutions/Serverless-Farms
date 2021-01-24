@@ -32,6 +32,10 @@ def create(event, context):
 
     # create a response
     response = {
+        "headers": {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Credentials': True,
+        },
         "statusCode": 200,
         "body": json.dumps(item)
     }
@@ -45,6 +49,10 @@ def list(event, context):
 
     # create a response
     response = {
+        "headers": {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Credentials': True,
+        },
         "statusCode": 200,
         "body": json.dumps(result['Items'], cls=DecimalEncoder)
     }
@@ -62,6 +70,10 @@ def get(event, context):
 
     # create a response
     response = {
+        "headers": {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Credentials': True,
+        },
         "statusCode": 200,
         "body": json.dumps(result['Item'],
                            cls=DecimalEncoder)
@@ -94,6 +106,10 @@ def update(event, context):
 
     # create a response
     response = {
+        "headers": {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Credentials': True,
+        },
         "statusCode": 200,
         "body": json.dumps(result['Attributes'],
                            cls=DecimalEncoder)
@@ -113,6 +129,10 @@ def delete(event, context):
 
     # create a response
     response = {
+        "headers": {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Credentials': True,
+        },
         "statusCode": 200
     }
 

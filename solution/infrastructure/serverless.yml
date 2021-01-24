@@ -18,7 +18,7 @@ service: ${self:custom.settings.awsRegionShortName}-${self:custom.settings.solut
 
 custom:
   settings: ${file(./config/settings/.settings.js):merged}
-
+  ## CUSTOM Insertion Point - DO NOT REMOVE
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
 frameworkVersion: '2'
@@ -33,7 +33,6 @@ provider:
 # you can define service wide environment variables here
   environment:
 
-    DYNAMODB_TABLE_WIDGET2: ${self:custom.settings.dbTablePrefix}-WIDGET2
     ## ENVIRONMENT Insertion Point - DO NOT REMOVE
 
 # you can add packaging information here
@@ -48,26 +47,14 @@ provider:
 # you can add CloudFormation resource templates here
 resources:
   Resources:
-
-    widget2DynamoDbTable:
-      Type: 'AWS::DynamoDB::Table'
-      DeletionPolicy: Retain
-      Properties:
-        AttributeDefinitions:
-          -
-            AttributeName: id
-            AttributeType: S
-        KeySchema:
-          -
-            AttributeName: id
-            KeyType: HASH
-        ProvisionedThroughput:
-          ReadCapacityUnits: 1
-          WriteCapacityUnits: 1
-        TableName: ${self:provider.environment.DYNAMODB_TABLE_WIDGET2}
     ## RESOURCE Insertion Point - DO NOT REMOVE
 
-#  Outputs:
+  Outputs:
+    ## OUTPUT Insertion Point - DO NOT REMOVE
 #     NewOutput:
 #       Description: "Description for the output"
 #       Value: "Some output value"
+
+plugins:
+  - serverless-deployment-bucket
+  - serverless-s3-remover
