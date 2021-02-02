@@ -42,6 +42,13 @@ for an infinite number of deployments without collisions (as long as each enviro
 Furthermore, production, staging and even individual github users can all have their own version
 of the deployed code.
 
+## Frontend
+1. Copy existing JS project into solution/ui.  The project can be using any modern JS framework that you choose the only requirement is that 'pnpm run build' creates a built website in ui/build (this can be configured or changed if needed).  
+2. Alternately, you can run "npx run create-react-app ui" (or similar generator script)
+3. execute the template for a static site with "hygen static-site new"
+4. Execute "solution\infrastructure:$ serverless deploy -s <StageName>" to create the necessary cloudfront and S3 resources
+5. execute "solution\ui: $ serverless publish-ui --stage <StageName>" to deploy the static site.
+
 
 ## Next Steps
 If this is helpful then the next step is to continue to build out the library of templates.  I think

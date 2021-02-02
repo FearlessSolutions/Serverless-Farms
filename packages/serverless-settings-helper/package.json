@@ -4,10 +4,10 @@
   "version": "1.0.0",
   "description": "This package provides a helper to merge solution settings files with local and solution-level defaults",
   "author": "Fearless",
-  "main": "lib/index.js",
+  "main": "src/index.js",
   "license": "MIT",
   "files": [
-    "lib"
+    "src"
   ],
   "peerDependencies": {
     "serverless": "^1.60.5"
