@@ -5,12 +5,12 @@ prepend: true
 to: infrastructure/serverless.yml
 sh: "cd infrastructure && pnpm install @fearless/serverless-settings-helper serverless-deployment-bucket serverless-s3-remover --save-dev"
 ---
-      # =============================================================================================
-      # S3 Buckets
-      # =============================================================================================
+    # =============================================================================================
+    # S3 Buckets
+    # =============================================================================================
 
-      # S3 Bucket for the static website
-      WebsiteBucket:
+    # S3 Bucket for the static website
+    WebsiteBucket:
         Type: AWS::S3::Bucket
         Properties:
           BucketName: ${self:custom.settings.websiteBucketName}
@@ -18,7 +18,7 @@ sh: "cd infrastructure && pnpm install @fearless/serverless-settings-helper serv
             IndexDocument: index.html
             ErrorDocument: index.html
 
-      WebsiteBucketPolicy:
+    WebsiteBucketPolicy:
         Type: AWS::S3::BucketPolicy
         Properties:
           Bucket: !Ref WebsiteBucket

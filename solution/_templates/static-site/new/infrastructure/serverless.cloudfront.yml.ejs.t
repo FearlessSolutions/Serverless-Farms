@@ -4,11 +4,11 @@ before: RESOURCE Insertion Point
 prepend: true
 to: infrastructure/serverless.yml
 ---
-      # =============================================================================================
-      # CloudFront
-      # =============================================================================================
+    # =============================================================================================
+    # CloudFront
+    # =============================================================================================
 
-      WebsiteCloudFront:
+    WebsiteCloudFront:
         Type: AWS::CloudFront::Distribution
         DependsOn:
           - WebsiteBucket
@@ -56,8 +56,8 @@ to: infrastructure/serverless.yml
                   - 'US'
                 RestrictionType: 'whitelist'
 
-      CloudFrontOAI:
+    CloudFrontOAI:
         Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
         Properties:
-          CloudFrontOriginAccessIdentityConfig:
-            Comment: 'OAI for ${self:custom.settings.websiteBucketName}'
+            CloudFrontOriginAccessIdentityConfig:
+                Comment: 'OAI for ${self:custom.settings.websiteBucketName}'

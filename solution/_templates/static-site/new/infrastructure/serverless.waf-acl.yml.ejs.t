@@ -4,12 +4,12 @@ before: RESOURCE Insertion Point
 prepend: true
 to: infrastructure/serverless.yml
 ---
-      # =============================================================================================
-      # WAF ACL for Cloudfront Distribution
-      # =============================================================================================
+    # =============================================================================================
+    # WAF ACL for Cloudfront Distribution
+    # =============================================================================================
 
-      # Web Application Firewall Access Control List
-      rWAFWebACL:
+    # Web Application Firewall Access Control List
+    rWAFWebACL:
         Type: AWS::WAFv2::WebACL
         Properties:
           Name: !Sub WebApplicationFirewall-${AWS::StackName}
