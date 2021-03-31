@@ -1,5 +1,6 @@
 ---
 to: ui/src/components/uploader.js
+sh: cd ui && pnpm install react-dropzone-uploader
 ---
 import React from 'react';
 import Dropzone from "react-dropzone-uploader";
