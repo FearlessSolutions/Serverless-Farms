@@ -1,5 +1,5 @@
 ---
-to: backend/config/settings/.default.yml
+to: backend/config/settings/.defaults.yml
 inject: true
 before: SETTING Insertion Point
 prepend: true

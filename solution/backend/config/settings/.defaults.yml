@@ -27,3 +27,4 @@ infrastructureStackName: ${self:custom.settings.namespace}-infrastructure
 # URL of the website
 #websiteUrl: ${cf:${self:custom.settings.infrastructureStackName}.WebsiteUrl}
 
+## SETTING Insertion Point
