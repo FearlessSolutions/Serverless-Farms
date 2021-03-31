@@ -25,7 +25,7 @@ frameworkVersion: '2'
 
 provider:
   name: aws
-  runtime: python2.7
+  runtime: python3.8
   region: ${self:custom.settings.awsRegion}
   profile: ${self:custom.settings.awsProfile}
   stackName: ${self:custom.settings.envName}-${self:service}
@@ -42,13 +42,12 @@ provider:
     ## ENVIRONMENT Insertion Point - DO NOT REMOVE
 
 # you can add packaging information here
-#package:
-#  include:
-#    - include-me.py
-#    - include-me-dir/**
-#  exclude:
-#    - exclude-me.py
-#    - exclude-me-dir/**
+package:
+  include:
+    - models/**
+    - lambdas/**
+  exclude:
+    - node_modules/**
 
 functions:
 
