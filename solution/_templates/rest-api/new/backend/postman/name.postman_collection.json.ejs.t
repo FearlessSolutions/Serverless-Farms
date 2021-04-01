@@ -39,12 +39,12 @@ to: backend/postman/<%= h.changeCase.lower(name) %>.postman_collection.json
 					}
 				},
 				"url": {
-					"raw": "{{host}}/{{model}}",
+					"raw": "{{host}}/<%= name %>",
 					"host": [
 						"{{host}}"
 					],
 					"path": [
-						"{{model}}"
+						"<%= name %>"
 					]
 				}
 			},
@@ -80,12 +80,12 @@ to: backend/postman/<%= h.changeCase.lower(name) %>.postman_collection.json
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{host}}/{{model}}",
+					"raw": "{{host}}/<%= name %>",
 					"host": [
 						"{{host}}"
 					],
 					"path": [
-						"{{model}}"
+						"<%= name %>"
 					]
 				}
 			},
@@ -111,12 +111,12 @@ to: backend/postman/<%= h.changeCase.lower(name) %>.postman_collection.json
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{host}}/{{model}}/{{id}}",
+					"raw": "{{host}}/<%= name %>/{{id}}",
 					"host": [
 						"{{host}}"
 					],
 					"path": [
-						"{{model}}",
+						"<%= name %>",
 						"{{id}}"
 					]
 				}
@@ -152,12 +152,12 @@ to: backend/postman/<%= h.changeCase.lower(name) %>.postman_collection.json
 					}
 				},
 				"url": {
-					"raw": "{{host}}/{{model}}/{{id}}",
+					"raw": "{{host}}/<%= name %>/{{id}}",
 					"host": [
 						"{{host}}"
 					],
 					"path": [
-						"{{model}}",
+						"<%= name %>",
 						"{{id}}"
 					]
 				}
@@ -184,12 +184,12 @@ to: backend/postman/<%= h.changeCase.lower(name) %>.postman_collection.json
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{host}}/{{model}}/{{id}}",
+					"raw": "{{host}}/<%= name %>/{{id}}",
 					"host": [
 						"{{host}}"
 					],
 					"path": [
-						"{{model}}",
+						"<%= name %>",
 						"{{id}}"
 					]
 				}
