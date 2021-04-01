@@ -6,6 +6,8 @@ import {useEffect, useState} from "react";
 import {get<%= Name %>s} from "../helpers/api";
 import {Link} from "react-router-dom"
 import {Table} from "@trussworks/react-uswds"
+import '@trussworks/react-uswds/lib/uswds.css'
+import '@trussworks/react-uswds/lib/index.css'
 
 const <%= Name %>s = () =>{
     const [<%= name %>s, set<%= Name %>s] = useState([]);
