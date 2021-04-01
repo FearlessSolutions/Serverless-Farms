@@ -1,6 +1,6 @@
 ---
 to: ui/src/components/<%= name %>s.js
-sh: cd .. && pnpm install @trussworks/react-uswds
+sh: cd ui && pnpm install @trussworks/react-uswds
 ---
 import {useEffect, useState} from "react";
 import {get<%= Name %>s} from "../helpers/api";
