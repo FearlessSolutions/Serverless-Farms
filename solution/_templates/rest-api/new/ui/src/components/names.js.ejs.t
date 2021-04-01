@@ -8,7 +8,7 @@ import {Link} from "react-router-dom"
 import {Table} from "@trussworks/react-uswds"
 
 const <%= Name %>s = () =>{
-    const [<%= name %>, set<%= Name %>] = useState([]);
+    const [<%= name %>s, set<%= Name %>s] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -38,12 +38,12 @@ const <%= Name %>s = () =>{
                         </tr>
                     </thead>
                     <tbody>
-                        {<%= name %>s.map(cow =>{
+                        {<%= name %>s.map(<%= name %> =>{
                             const createdAt = new Date(<%= name %>.createdAt * 1000)
                             return (
                                 <tr>
                                     <th scope={"col"}>
-                                        <Link to={`/<%= name %>/${<%= name %>.id}`}>{cow.id}</Link>
+                                        <Link to={`/<%= name %>/${<%= name %>.id}`}>{<%= name %>.id}</Link>
                                     </th>
                                     <th scope={"col"}>
                                         {JSON.stringify(<%= name %>.data)}
