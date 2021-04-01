@@ -133,7 +133,8 @@ def delete(event, context):
           'Access-Control-Allow-Origin': '*',
           'Access-Control-Allow-Credentials': True,
         },
-        "statusCode": 200
+        "statusCode": 200,
+        "body": json.dumps({"success": "true"})
     }
 
     return response
